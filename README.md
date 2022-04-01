@@ -3,6 +3,8 @@
 Contract dependencies:
   - OpenZeppelin/openzeppelin-contracts@4.2.0
   - smartcontractkit/chainlink-brownie-contracts@0.2.1
+  - pyyaml
+  - pytest
 
 Frontend dependencies:
 - yarn 
