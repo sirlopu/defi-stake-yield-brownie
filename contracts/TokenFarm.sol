@@ -8,11 +8,15 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 contract TokenFarm is Ownable {
     // mapping token address -> staker address -> amount 
     mapping(address => mapping(address => uint256)) public stakingBalance;
+
     mapping(address => uint256) public uniqueTokensStaked;
     mapping(address => address) public tokenPriceFeedMapping;
+
     address[] public stakers;
     address[] public allowedTokens;
+
     IERC20 public dappToken;
+
 // stakeTokens - DONE!
 // unStakeTokens - DONE
 // issueTokens - DONE!
@@ -41,6 +45,8 @@ contract TokenFarm is Ownable {
             stakersIndex++
         ){
             address recipient = stakers[stakersIndex];
+            // send them a token reward
+            // based on their total value locked
             uint256 userTotalValue = getUserTotalValue(recipient);
             dappToken.transfer(recipient, userTotalValue);
         }
@@ -86,8 +92,12 @@ contract TokenFarm is Ownable {
 
 
     function stakeTokens(uint256 _amount, address _token) public {
+        // amount to stake
         require(_amount > 0, "Amount must be more than 0");
-        require(tokenIsAllowed(_token), "Token is currently no allowed");
+
+        // only this kind of token to stake
+        require(tokenIsAllowed(_token), "Token is currently not allowed");
+
         IERC20(_token).transferFrom(msg.sender, address(this), _amount);
         updateUniqueTokensStaked(msg.sender, _token);
         stakingBalance[_token][msg.sender] = stakingBalance[_token][msg.sender] + _amount;
