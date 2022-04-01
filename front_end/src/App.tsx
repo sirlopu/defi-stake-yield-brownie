@@ -1,4 +1,5 @@
 import React from 'react';
+import { Header } from "./components/Header"
 import { DAppProvider, ChainId } from '@usedapp/core';
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <DAppProvider config={{
       supportedChains: [ChainId.Kovan, ChainId.Rinkeby]
     }}>
-      <div>Hi</div>
+      <Header />
     </DAppProvider>
   );
 }
