@@ -10,6 +10,8 @@ Frontend dependencies:
 - yarn 
 - npx
 - useDapp
-- MaterialUI
+- yarn add @material-ui/core
+- yarn add @material-ui/lab
+- yarn add @ethersproject/units
 
 frontend init: ```npx create-react-app front_end --template typescript```
