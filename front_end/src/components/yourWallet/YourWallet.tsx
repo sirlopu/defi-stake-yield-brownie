@@ -52,7 +52,7 @@ export const YourWallet = ({ supportedTokens }: YourWalletProps) => {
                             <TabPanel value={index.toString()} key={index}>
                                 <div className={classes.tabContent}>
                                     <WalletBalance token={supportedTokens[selectedTokenIndex]} />
-                                    {/* <StakeForm token={supportedTokens[selectedTokenIndex]} /> */}
+                                    <StakeForm token={supportedTokens[selectedTokenIndex]} />
                                 </div>
                             </TabPanel>
                         )

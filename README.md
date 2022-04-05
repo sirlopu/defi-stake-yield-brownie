@@ -13,5 +13,6 @@ Frontend dependencies:
 - yarn add @material-ui/core
 - yarn add @material-ui/lab
 - yarn add @ethersproject/units
+- yarn add @ethersproject/contracts
 
 frontend init: ```npx create-react-app front_end --template typescript```
