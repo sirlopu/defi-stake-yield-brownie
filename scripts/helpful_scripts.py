@@ -13,13 +13,11 @@ from brownie import (
 INITIAL_PRICE_FEED_VALUE = 2000000000000000000000
 DECIMALS = 18
 
-FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork-dev"]
 NON_FORKED_LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["hardhat", "development", "ganache"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = NON_FORKED_LOCAL_BLOCKCHAIN_ENVIRONMENTS + [
     "mainnet-fork",
     "binance-fork",
     "matic-fork",
-    "ganache-local",
 ]
 
 contract_to_mock = {

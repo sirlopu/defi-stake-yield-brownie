@@ -2,8 +2,8 @@ from scripts.helpful_scripts import get_account, get_contract
 from brownie import DappToken, TokenFarm, network, config
 from web3 import Web3
 import yaml
-import os
 import json
+import os
 import shutil
 
 KEPT_BALANCE = Web3.toWei(100, "ether")
@@ -55,7 +55,7 @@ def update_front_end():
         config_dict = yaml.load(brownie_config, Loader=yaml.FullLoader)
         with open("./front_end/src/brownie-config.json", "w") as brownie_config_json:
             json.dump(config_dict, brownie_config_json)
-    print("Frontend updated!")
+    print("Front end updated!")
 
 
 def copy_folders_to_front_end(src, dest):
